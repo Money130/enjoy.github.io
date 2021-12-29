@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="p2.css">
+	<title></title>
+</head>
+<body>
+	<div id="loading">
+		<div class="loadingImage"></div>
+	</div>
+	<nav class="menu">
+		<ul class="flex-nav">
+			<li><a href="index.html">首頁</a></li>
+			<li><a href="p2.html">綠循環</a></li>
+			<li><a href="p3.html">簡介</a></li>
+			<li><a href="p4.html">周邊設計</a></li>
+			<li><a href="p5.html">聯絡我們</a></li>
+		</ul>
+	</nav>
+	<div style="background-color:green;" class="section" id="a1" data-label="概念"><a href="a1"></a></div>
+	<div style="background-color:skyblue;" class="section" id="a2" data-label="用途">
+		<a href="a2"></a>
+		<div class="round-p-div">
+			<img src="ai.png" alt="" class="round-p" id="round1" usemap="#planetmap">
+			<!-- 第二次提報後 -->
+			<map name="planetmap">
+  		<area shape="rect" coords="111,46,124,106" data-toggle="tooltip" data-placement="bottom" title="要在有網路的情況下才能使用喔！">
+			</map>
+			<!-- 第二次提報後 -->
+			<p class="text_column" id="text">　　我們使用文案經營自然流量，平均每個月會有將近<span class="fc">40K</span>的自然流量進到官網，幫公司能省下非常龐大的<span class="fc">廣告預算</span>，增加<span class="fc">可觀的銷售金額</span>。而你也有機會達到這樣的成績，只要你在文案撰寫上能夠提供觀眾<span class="fc">喜歡的內容</span>，這樣的自然流量也能屬於你們。<br>　　
+				<span class="fc">文案撰稿人創作內容</span>；行銷人員獲取利用內容並將其用作<span class="fc">產生網站流量</span>的工具，並希望獲得潛在客戶。當然更希望能獲得<span class="fc">潛在客戶</span>的更多訊息，比如<span class="fc">電子郵件地址、網站上的行為。</span>
+			</p>
+		</div>
+		<div class="round-p-div"><img src="ai.png" alt="" class="round-p" id="round2">
+			<p class="text_column2" id="text2">　　我們使用文案經營自然流量，平均每個月會有將近<span class="fc">40K</span>的自然流量進到官網，幫公司能省下非常龐大的<span class="fc">廣告預算</span>，增加<span class="fc">可觀的銷售金額</span>。而你也有機會達到這樣的成績，只要你在文案撰寫上能夠提供觀眾<span class="fc">喜歡的內容</span>，這樣的自然流量也能屬於你們。<br>　　
+				<span class="fc">文案撰稿人創作內容</span>；行銷人員獲取利用內容並將其用作<span class="fc">產生網站流量</span>的工具，並希望獲得潛在客戶。當然更希望能獲得<span class="fc">潛在客戶</span>的更多訊息，比如<span class="fc">電子郵件地址、網站上的行為。</span>
+			</p>
+		</div>
+
+	</div>
+	<div style="background-color:purple;" class="section" id="a3" data-label="故事動畫"><a href="a3"></a></div>
+	<div style="background-color:orange;" class="section" id="a4" data-label="互動遊戲"><a href="a4"></a></div>
+<script src="script.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script>$("#loading").fadeOut(1600);</script>
+<script type="text/javascript">
+	var windowWidth=$(window).width();
+$("#round1").css({'left':windowWidth-500});
+$("#round2").css({'left':0});
+
+
+
+$(window).scroll(function(){
+    var windowTop = $(window).scrollTop();
+    
+    if(windowTop>$("#a2").offset().top/2){
+      $("#round1").css({'left':windowWidth/2-windowWidth*0.05-400});
+      $("#round1").addClass("round-r");
+      $("#round2").css({'left':windowWidth/2+200});
+	  $("#round2").addClass("round-r");
+      $("#text").addClass("tt");
+      $("#text2").addClass("tt");
+    }
+    if(windowTop<$("#a2").offset().top/2 || windowTop>$("#a3").offset().top/3*2){
+      $("#round1").css({'left':windowWidth-500});
+      $("#round1").removeClass("round-r");
+      $("#round2").css({'left':0});
+	  	$("#round2").removeClass("round-r");
+      $("#text").removeClass("tt");
+      $("#text2").removeClass("tt");
+    }
+  });
+
+
+// 第二次提報後
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>	
+</body>
+</html>

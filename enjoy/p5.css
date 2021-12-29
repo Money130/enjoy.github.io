@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.menu {
+    position: fixed;
+    top: 2rem;
+    right: 5rem;
+    display: flex;
+    font-size: 18px;
+}
+
+.flex-nav {
+    margin-left: 15px;
+    padding-top: 3px;
+    list-style: none;
+    display: flex;
+}
+
+.flex-nav li {
+    margin: 0px 12px;
+}
+
+.content-menu {
+    position: fixed;
+    top: 50%;
+    right: 15px;
+    color: #047fa4;
+    transform: translateY(-50%);
+    transition: color .5s ease;
+}
+
+.content-menu ul {
+    list-style: none;
+}
+
+.content-menu li {
+    margin: 8px 0;
+}
+
+
+.section {
+    height: 100vh;
+}
+
+/*右邊選單*/
+html {
+  scroll-behavior: smooth;
+}
+
+.nav {
+  --nav-gap: 15px;
+  padding: var(--nav-gap);
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-item {
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: var(--nav-gap);
+}
+
+.nav-link:hover ~ .nav-label {
+  opacity: 1;
+}
+
+.nav-label {
+  color: #000000;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+
+.nav-link {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  height: var(--nav-gap);
+  margin-left: var(--nav-gap);
+  transition: transform 0.1s;
+  width: var(--nav-gap);
+}
+
+.nav-link-selected {
+  background: #000000;
+  transform: scale(1.4);
+}
+
+/*Loader*/
+.box{
+    position: absolute;
+    top: 50%;  left: 50%;
+    transform: translate(-50%,-50%) scale(2);
+    width: 400px;   height: 50px;
+    background: transparent;
+    overflow: hidden;
+}
+
+.box::before{
+    content: attr(data-text);
+    position: absolute;
+    top: -20px;
+	left: 0;
+    width: 100%;
+	height: 100%;
+    color: transparent;
+    font-size: 40px;
+    text-decoration: underline #f00 wavy;
+    animation: animate 2s infinite linear;
+}
+
+@keyframes animate{
+    0%{
+      left: -10px;
+    }
+    100%{
+      left: -170px;
+    }
+}
