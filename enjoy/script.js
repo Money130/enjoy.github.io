@@ -41,26 +41,3 @@ activateNavigation();
 
 
 
-
-$(document).ready(function(e){
-var windowWidth=$(window).width();
-$("#round1").css({'left':windowWidth-500});
-
-
-
-$(window).scroll(function(){
-    var windowTop = $(window).scrollTop();
-    
-    if(windowTop>$("#a2").offset().top/2){
-      $("#round1").css({'left':windowWidth/2-windowWidth*0.05-150});
-      $("#round1").addClass("round-r");
-    }
-    if(windowTop<$("#a2").offset().top/2 || windowTop>$("#a3").offset().top/3*2){
-      $("#round1").css({'left':windowWidth-500});
-      $("#round1").removeClass("round-r");
-    }
-  });
-
-
-});
-
